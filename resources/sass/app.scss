@@ -1,0 +1,16 @@
+@import "node_modules/bootstrap/scss/bootstrap";
+
+@import "fonts";
+@import "variables";
+
+html,
+body {
+    margin: 0px;
+    padding: 0px;
+
+    font-family: $font;
+    background-color: $blue;
+}
+
+@import "components/nav";
+@import "pages/page";
