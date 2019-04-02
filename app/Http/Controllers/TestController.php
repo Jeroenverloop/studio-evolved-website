@@ -8,5 +8,5 @@ class TestController extends Controller
 {
     //
     public $test;
-    public $test4aaaaa;
+    public $test4aaaaaaa;
 }
