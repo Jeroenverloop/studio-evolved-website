@@ -8,8 +8,8 @@
             :class="{ hidden: stage < 7 }"
         />
         <div class="text" :class="{ hidden: stage < 7 }">
-            Wij zijn op dit moment hard bezig met het ontwikkelen van onze
-            nieuwe website!
+            Onze website is momenteel in ontwikkeling en zal spoedig weer online
+            zijn!
         </div>
 
         <div class="contact" :class="{ hidden: stage < 3 }">

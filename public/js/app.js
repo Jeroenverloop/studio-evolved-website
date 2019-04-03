@@ -18310,7 +18310,7 @@ var render = function() {
       _vm._v(" "),
       _c("div", { staticClass: "text", class: { hidden: _vm.stage < 7 } }, [
         _vm._v(
-          "\n        Wij zijn op dit moment hard bezig met het ontwikkelen van onze\n        nieuwe website!\n    "
+          "\n        Onze website is momenteel in ontwikkeling en zal spoedig weer online\n        zijn!\n    "
         )
       ]),
       _vm._v(" "),
