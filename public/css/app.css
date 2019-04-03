@@ -10660,7 +10660,7 @@ body {
   margin: 0px;
   padding: 0px;
   font-family: "Barlow", sans-serif;
-  background-color: #000;
+  background-color: #49a8cc;
 }
 
 .navigation {
@@ -10836,7 +10836,7 @@ body {
   margin-bottom: 40px;
   box-sizing: border-box;
   border: 2px #fff solid;
-  background: #000;
+  background: #49a8cc;
   transition-duration: 0.3s;
 }
 
@@ -10868,7 +10868,7 @@ body {
   cursor: pointer;
   padding-left: 20px;
   line-height: 36px;
-  color: #000;
+  color: #49a8cc;
   font-weight: 600;
 }
 
@@ -10908,7 +10908,7 @@ body {
 .page.contact .contact-form .credentials input[type=text] {
   width: 100%;
   padding: 5px 10px;
-  color: #000;
+  color: #49a8cc;
   box-sizing: border-box;
   border: 2px #6fb9d4 solid;
   margin-bottom: 20px;
@@ -10916,19 +10916,19 @@ body {
 }
 
 .page.contact .contact-form .credentials input[type=text]::-webkit-input-placeholder {
-  color: #000;
+  color: #49a8cc;
 }
 
 .page.contact .contact-form .credentials input[type=text]:-ms-input-placeholder {
-  color: #000;
+  color: #49a8cc;
 }
 
 .page.contact .contact-form .credentials input[type=text]::-ms-input-placeholder {
-  color: #000;
+  color: #49a8cc;
 }
 
 .page.contact .contact-form .credentials input[type=text]::placeholder {
-  color: #000;
+  color: #49a8cc;
 }
 
 .page.contact .contact-form .credentials input[type=text]:focus {
@@ -10940,7 +10940,7 @@ body {
 
 .page.contact .contact-form .credentials input[type=text]:-webkit-autofill {
   border: 2px #6fb9d4 solid;
-  -webkit-text-fill-color: #000;
+  -webkit-text-fill-color: #49a8cc;
   -webkit-box-shadow: 0 0 0px 1000px #fff inset;
   transition: background-color 5000s ease-in-out 0s;
 }
@@ -10953,26 +10953,26 @@ body {
   padding: 5px 10px;
   height: 100%;
   width: 100%;
-  color: #000;
+  color: #49a8cc;
   box-sizing: border-box;
   border: 5px #6fb9d4 solid;
   transition-duration: 0.3s;
 }
 
 .page.contact .contact-form .message textarea::-webkit-input-placeholder {
-  color: #000;
+  color: #49a8cc;
 }
 
 .page.contact .contact-form .message textarea:-ms-input-placeholder {
-  color: #000;
+  color: #49a8cc;
 }
 
 .page.contact .contact-form .message textarea::-ms-input-placeholder {
-  color: #000;
+  color: #49a8cc;
 }
 
 .page.contact .contact-form .message textarea::placeholder {
-  color: #000;
+  color: #49a8cc;
 }
 
 .page.contact .contact-form .message textarea:focus {
