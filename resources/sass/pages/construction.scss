@@ -1,0 +1,25 @@
+.construction {
+    border-top: 5px solid #fff;
+    background: $yellow;
+
+    .container {
+        max-width: 1000px;
+        padding: 100px 40px;
+        margin: auto;
+        text-align: center;
+
+        .title {
+            text-align: center;
+            font-size: 40px;
+            color: #483906;
+            margin-bottom: 40px;
+        }
+
+        .text {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 22px;
+            color: #483906;
+        }
+    }
+}

@@ -1,10 +1,7 @@
 <template>
-    <div class="page">
-        <div class="container"></div>
-        <layout-logo />
-        <div class="scroll">
-            <img src="/img/scroll_wit.png" />
-        </div>
+    <div class="app">
+        <page-home />
+        <!--<page-construction />-->
     </div>
 </template>
 
@@ -15,8 +12,8 @@ export default {
     mounted() {
         $(window).scroll(function(event) {
             let max = 100;
-            let scroll = Math.min(max, $(window).scrollTop());
-            $("body").css("background-position-y", scroll);
+            let scroll = Math.min(max, $(window).scrollTop() / 20);
+            $("body").css("background-position-y", -scroll);
         });
     }
 };
