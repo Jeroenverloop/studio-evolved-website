@@ -1,5 +1,5 @@
-import Header from "./Header";
+import Logo from "./Logo";
 
 export default {
-    Header,
+    Logo,
 };

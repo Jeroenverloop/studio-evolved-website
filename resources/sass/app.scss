@@ -1,16 +1,80 @@
-@import "node_modules/bootstrap/scss/bootstrap";
+//@import "node_modules/bootstrap/scss/bootstrap";
 
 @import "fonts";
 @import "variables";
 
 html,
 body {
+    height: 100%;
+    width: 100%;
     margin: 0px;
     padding: 0px;
 
     font-family: $font;
-    background-color: $blue;
+    background: url("/img/background.jpg");
+    overflow: hidden;
 }
 
-@import "components/nav";
-@import "pages/page";
+.container {
+    padding: 0px 40px;
+    position: relative;
+}
+
+.logo-container {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+}
+
+.scroll {
+    position: absolute;
+    left: 50%;
+    bottom: 40px;
+    transform: translateX(-50%);
+
+    animation: scroll-up-down 1s infinite;
+
+    img {
+        max-height: 50px;
+    }
+}
+
+.logo {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+
+    animation: logo-in 1.5s;
+    animation-timing-function: ease-in-out;
+
+    &.hidden {
+        opacity: 0;
+    }
+}
+
+@keyframes logo-in {
+    from {
+        filter: blur(50px);
+        opacity: 0;
+    }
+    to {
+        filter: blur(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes scroll-up-down {
+    0% {
+        transform: translate(-50%, 0px);
+    }
+    50% {
+        transform: translate(-50%, 20px);
+    }
+    100% {
+        transform: translate(-50%, 0px);
+    }
+}

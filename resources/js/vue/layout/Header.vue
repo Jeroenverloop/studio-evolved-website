@@ -1,6 +1,7 @@
 <template>
     <nav class="navigation">
         <img src="img/Logo-white.png" class="logo" />
+        <!--
         <div class="menu">
             <div class="menu-item">
                 <span>Home</span>
@@ -22,6 +23,7 @@
             </div>
         </div>
         <div style="clear:both"></div>
+        -->
     </nav>
 </template>
 
