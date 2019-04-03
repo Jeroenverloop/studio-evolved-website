@@ -7,6 +7,7 @@ body {
   font-family: "Ubuntu", sans-serif;
   background: url("/img/background.jpg");
   background-attachment: fixed;
+  overflow-x: hidden;
 }
 
 .home .logo {
@@ -53,6 +54,11 @@ body {
           transform: translate(-50%, -50%);
   width: 150px;
   opacity: 0.7;
+  transition-duration: 0.5s;
+}
+
+.home .construction-img.hidden {
+  opacity: 0;
 }
 
 .home .text {
@@ -66,6 +72,13 @@ body {
   color: #fff;
   text-align: center;
   opacity: 0.9;
+  transition-duration: 0.5s;
+}
+
+.home .text.hidden {
+  opacity: 0;
+  -webkit-transform: translate(-50%, -40%);
+          transform: translate(-50%, -40%);
 }
 
 .home .circle {
@@ -95,6 +108,7 @@ body {
   position: absolute;
   right: 30px;
   bottom: 30px;
+  transition-duration: 0.5s;
 }
 
 .home .contact .item {
@@ -114,6 +128,10 @@ body {
 .home .contact .item .icon img {
   transition-duration: 0.5s;
   height: 30px;
+}
+
+.home .contact.hidden {
+  right: -100px;
 }
 
 @-webkit-keyframes logo-in {

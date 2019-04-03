@@ -152,8 +152,6 @@ __webpack_require__.r(__webpack_exports__);
   },
   mounted: function mounted() {
     jquery__WEBPACK_IMPORTED_MODULE_0___default()(".logo").removeClass("hidden");
-    setTimeout(function () {//$(".logo").addClass("out");
-    }, 5000);
     this.currentMouse.x = window.innerWidth / 2;
     this.targetMouse.x = window.innerWidth / 2;
     this.currentMouse.y = window.innerHeight / 2;
@@ -280,23 +278,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      toNext: false
+      stage: 0
     };
   },
-  methods: {
-    toNextPage: function toNextPage() {
-      this.toNext = true;
+  mounted: function mounted() {
+    var _this = this;
+
+    for (var i = 0; i < 10; i++) {
       setTimeout(function () {
-        jquery__WEBPACK_IMPORTED_MODULE_0___default()("html, body").animate({
-          scrollTop: jquery__WEBPACK_IMPORTED_MODULE_0___default()(".test").offset().top + 5
-        }, 500);
-      }, 500);
+        _this.stage++;
+      }, i * 250);
     }
   }
 });
@@ -18305,20 +18300,27 @@ var render = function() {
     "div",
     { staticClass: "home", staticStyle: { height: "100vh" } },
     [
-      _c("layout-logo", { attrs: { out: _vm.toNext } }),
+      _c("layout-logo", { attrs: { out: false } }),
       _vm._v(" "),
       _c("img", {
         staticClass: "construction-img",
+        class: { hidden: _vm.stage < 7 },
         attrs: { src: "/img/construction.png" }
       }),
       _vm._v(" "),
-      _c("div", { staticClass: "text" }, [
+      _c("div", { staticClass: "text", class: { hidden: _vm.stage < 7 } }, [
         _vm._v(
           "\n        Wij zijn op dit moment hard bezig met het ontwikkelen van onze\n        nieuwe website!\n    "
         )
       ]),
       _vm._v(" "),
-      _vm._m(0)
+      _c("div", { staticClass: "contact", class: { hidden: _vm.stage < 3 } }, [
+        _vm._m(0),
+        _vm._v(" "),
+        _vm._m(1),
+        _vm._v(" "),
+        _vm._m(2)
+      ])
     ],
     1
   )
@@ -18328,38 +18330,44 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "contact" }, [
-      _c("div", { staticClass: "item" }, [
-        _c(
-          "a",
-          {
-            staticClass: "icon",
-            attrs: { href: "mailto:info@studioevolved.nl" }
-          },
-          [_c("img", { attrs: { src: "/img/social/mail.png" } })]
-        )
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "item" }, [
-        _c("a", { staticClass: "icon", attrs: { href: "tel:0621554596" } }, [
-          _c("img", { attrs: { src: "/img/social/phone.png" } })
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "item" }, [
-        _c(
-          "a",
-          {
-            staticClass: "icon",
-            attrs: {
-              href:
-                "https://www.google.com/maps/place/Europalaan+100,+3526+KS+Utrecht/@52.0642471,5.1064218,17z/data=!3m1!4b1!4m5!3m4!1s0x47c665eb85078021:0x6ff23b3d038f6957!8m2!3d52.0642438!4d5.1086105",
-              target: "blank"
-            }
-          },
-          [_c("img", { attrs: { src: "/img/social/location.png" } })]
-        )
+    return _c("div", { staticClass: "item" }, [
+      _c(
+        "a",
+        {
+          staticClass: "icon",
+          attrs: { href: "mailto:info@studioevolved.nl" }
+        },
+        [_c("img", { attrs: { src: "/img/social/mail.png" } })]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "item" }, [
+      _c("a", { staticClass: "icon", attrs: { href: "tel:0621554596" } }, [
+        _c("img", { attrs: { src: "/img/social/phone.png" } })
       ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "item" }, [
+      _c(
+        "a",
+        {
+          staticClass: "icon",
+          attrs: {
+            href:
+              "https://www.google.com/maps/place/Europalaan+100,+3526+KS+Utrecht/@52.0642471,5.1064218,17z/data=!3m1!4b1!4m5!3m4!1s0x47c665eb85078021:0x6ff23b3d038f6957!8m2!3d52.0642438!4d5.1086105",
+            target: "blank"
+          }
+        },
+        [_c("img", { attrs: { src: "/img/social/location.png" } })]
+      )
     ])
   }
 ]

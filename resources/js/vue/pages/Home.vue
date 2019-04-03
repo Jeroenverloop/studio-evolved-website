@@ -1,20 +1,18 @@
 <template>
     <div class="home" style="height: 100vh">
-        <layout-logo :out="toNext" />
-        <!--<div class="scroll">
-            <img src="/img/scroll_wit.png" />
-        </div>-->
-        <!--<div class="circle" @click="toNextPage">
-            <div class="square" />
-        </div>-->
+        <layout-logo :out="false" />
 
-        <img src="/img/construction.png" class="construction-img" />
-        <div class="text">
+        <img
+            src="/img/construction.png"
+            class="construction-img"
+            :class="{ hidden: stage < 7 }"
+        />
+        <div class="text" :class="{ hidden: stage < 7 }">
             Wij zijn op dit moment hard bezig met het ontwikkelen van onze
             nieuwe website!
         </div>
 
-        <div class="contact">
+        <div class="contact" :class="{ hidden: stage < 3 }">
             <div class="item">
                 <a href="mailto:info@studioevolved.nl" class="icon">
                     <img src="/img/social/mail.png" />
@@ -45,21 +43,15 @@ import $ from "jquery";
 export default {
     data() {
         return {
-            toNext: false
+            stage: 0
         };
     },
 
-    methods: {
-        toNextPage() {
-            this.toNext = true;
+    mounted() {
+        for (let i = 0; i < 10; i++) {
             setTimeout(() => {
-                $("html, body").animate(
-                    {
-                        scrollTop: $(".test").offset().top + 5
-                    },
-                    500
-                );
-            }, 500);
+                this.stage++;
+            }, i * 250);
         }
     }
 };

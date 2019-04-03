@@ -21,10 +21,6 @@ export default {
     mounted() {
         $(".logo").removeClass("hidden");
 
-        setTimeout(() => {
-            //$(".logo").addClass("out");
-        }, 5000);
-
         this.currentMouse.x = window.innerWidth / 2;
         this.targetMouse.x = window.innerWidth / 2;
         this.currentMouse.y = window.innerHeight / 2;

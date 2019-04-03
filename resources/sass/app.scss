@@ -13,7 +13,7 @@ body {
     font-family: $font;
     background: url("/img/background.jpg");
     background-attachment: fixed;
-    //overflow: hidden;
+    overflow-x: hidden;
 }
 
 @import "./pages/home.scss";
