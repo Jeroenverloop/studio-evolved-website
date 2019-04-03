@@ -10660,7 +10660,7 @@ body {
   margin: 0px;
   padding: 0px;
   font-family: "Barlow", sans-serif;
-  background-color: #49a8cc;
+  background-color: #000;
 }
 
 .navigation {
@@ -10832,11 +10832,11 @@ body {
   width: 30%;
   min-width: 300px;
   height: 200px;
-  background: #FDC80C;
+  background: #fdc80c;
   margin-bottom: 40px;
   box-sizing: border-box;
   border: 2px #fff solid;
-  background: #49a8cc;
+  background: #000;
   transition-duration: 0.3s;
 }
 
@@ -10868,12 +10868,12 @@ body {
   cursor: pointer;
   padding-left: 20px;
   line-height: 36px;
-  color: #49a8cc;
+  color: #000;
   font-weight: 600;
 }
 
 .page.working-at .jobs .job .action:hover {
-  background: #FDC80C;
+  background: #fdc80c;
   color: #fff;
 }
 
@@ -10908,7 +10908,7 @@ body {
 .page.contact .contact-form .credentials input[type=text] {
   width: 100%;
   padding: 5px 10px;
-  color: #49a8cc;
+  color: #000;
   box-sizing: border-box;
   border: 2px #6fb9d4 solid;
   margin-bottom: 20px;
@@ -10916,19 +10916,19 @@ body {
 }
 
 .page.contact .contact-form .credentials input[type=text]::-webkit-input-placeholder {
-  color: #49a8cc;
+  color: #000;
 }
 
 .page.contact .contact-form .credentials input[type=text]:-ms-input-placeholder {
-  color: #49a8cc;
+  color: #000;
 }
 
 .page.contact .contact-form .credentials input[type=text]::-ms-input-placeholder {
-  color: #49a8cc;
+  color: #000;
 }
 
 .page.contact .contact-form .credentials input[type=text]::placeholder {
-  color: #49a8cc;
+  color: #000;
 }
 
 .page.contact .contact-form .credentials input[type=text]:focus {
@@ -10940,7 +10940,7 @@ body {
 
 .page.contact .contact-form .credentials input[type=text]:-webkit-autofill {
   border: 2px #6fb9d4 solid;
-  -webkit-text-fill-color: #49a8cc;
+  -webkit-text-fill-color: #000;
   -webkit-box-shadow: 0 0 0px 1000px #fff inset;
   transition: background-color 5000s ease-in-out 0s;
 }
@@ -10953,26 +10953,26 @@ body {
   padding: 5px 10px;
   height: 100%;
   width: 100%;
-  color: #49a8cc;
+  color: #000;
   box-sizing: border-box;
   border: 5px #6fb9d4 solid;
   transition-duration: 0.3s;
 }
 
 .page.contact .contact-form .message textarea::-webkit-input-placeholder {
-  color: #49a8cc;
+  color: #000;
 }
 
 .page.contact .contact-form .message textarea:-ms-input-placeholder {
-  color: #49a8cc;
+  color: #000;
 }
 
 .page.contact .contact-form .message textarea::-ms-input-placeholder {
-  color: #49a8cc;
+  color: #000;
 }
 
 .page.contact .contact-form .message textarea::placeholder {
-  color: #49a8cc;
+  color: #000;
 }
 
 .page.contact .contact-form .message textarea:focus {
@@ -10991,7 +10991,7 @@ body {
   font-size: 18px;
   font-weight: 500;
   text-transform: uppercase;
-  background: #FDC80C;
+  background: #fdc80c;
   cursor: pointer;
   transition-duration: 0.3s;
 }

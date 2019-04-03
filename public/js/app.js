@@ -26762,7 +26762,7 @@ __webpack_require__.r(__webpack_exports__);
   for (var property in Pages) {
       vue.component('page-' + property.toLowerCase(), Pages[property]);
   }
-   for (var property in Common) {
+    for (var property in Common) {
       vue.component('common-' + property.toLowerCase(), Common[property]);
   }
   */
