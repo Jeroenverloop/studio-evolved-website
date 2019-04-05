@@ -1,0 +1,39 @@
+.who-are-we {
+    position: relative;
+    border-top: 5px #fff solid;
+    border-bottom: 5px #fff solid;
+    background: url("/img/Geel_WebBackground.png");
+    background-attachment: fixed;
+
+    .container {
+        position: relative;
+        max-width: 1200px;
+        margin: auto;
+        padding-top: 200px;
+        padding-bottom: 200px;
+        //padding: 400px 0px;
+
+        .portraits {
+            display: flex;
+            justify-content: space-around;
+            flex-direction: row;
+            flex-wrap: wrap;
+
+            .portrait {
+                background: #252525;
+                width: 200px;
+                height: 200px;
+                border-radius: 200px;
+            }
+        }
+
+        .page-image {
+            position: absolute;
+            bottom: 0px;
+            left: 100px;
+            width: 304px;
+            height: 159px;
+            background-image: url("/img/Wie_wij_zijn.png");
+        }
+    }
+}

@@ -25,8 +25,8 @@ export default {
         this.targetMouse.x = window.innerWidth / 2;
         this.currentMouse.y = window.innerHeight / 2;
         this.targetMouse.y = window.innerHeight / 2;
-        this.currentX = $(document).scrollTop();
-        this.targetX = $(document).scrollTop();
+        this.currentY = $(document).scrollTop();
+        this.targetY = $(document).scrollTop();
 
         let self = this;
 
@@ -36,13 +36,14 @@ export default {
         });
 
         setInterval(() => {
-            self.targetX = $(document).scrollTop();
+            self.targetY = $(document).scrollTop();
+
             if (!$(".logo").hasClass("out")) {
-                if (self.targetX > window.innerHeight / 2 || self.out) {
+                if (self.targetY > window.innerHeight * 0.75) {
                     $(".logo").addClass("out");
                 }
-            } else if (!self.out) {
-                if (self.targetX < window.innerHeight / 2) {
+            } else {
+                if (self.targetY < window.innerHeight * 0.75) {
                     $(".logo").removeClass("out");
                 }
             }
@@ -51,7 +52,7 @@ export default {
                 (self.targetMouse.x - self.currentMouse.x) / 50;
             self.currentMouse.y +=
                 (self.targetMouse.y - self.currentMouse.y) / 50;
-            self.currentX += (self.targetX - self.currentX) / 10;
+            self.currentY += (self.targetY - self.currentY) / 10;
 
             let halfWidth = window.innerWidth / 2;
             let halfHeight = window.innerHeight / 2;
@@ -65,7 +66,7 @@ export default {
 
             let transformX = x - logoWidth / 2;
             let transformY = y - logoHeight / 2;
-            transformY += self.currentX;
+            transformY += self.currentY;
 
             $(".logo")
                 .css(

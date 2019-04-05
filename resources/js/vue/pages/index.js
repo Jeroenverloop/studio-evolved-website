@@ -1,7 +1,7 @@
 import Home from "./Home";
-import Construction from "./Construction";
+import WhoAreWe from "./WhoAreWe";
 
 export default {
     Home,
-    Construction,
+    WhoAreWe,
 };

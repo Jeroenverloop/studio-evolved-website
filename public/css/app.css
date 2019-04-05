@@ -1,13 +1,35 @@
-@import url(https://fonts.googleapis.com/css?family=Barlow:100,200,300,400,500,600,700,800,900);@import url(https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700);html,
+@import url(https://fonts.googleapis.com/css?family=Barlow:100,200,300,400,500,600,700,800,900);@import url(https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700);@import url(https://fonts.googleapis.com/css?family=Poppins);html,
 body {
   height: 100%;
   width: 100%;
   margin: 0px;
   padding: 0px;
-  font-family: "Ubuntu", sans-serif;
+  font-family: "Poppins", "Ubuntu", sans-serif;
+  background-color: #49a8cc;
+  background-attachment: fixed;
+}
+
+.app {
+  position: relative;
+  height: 100%;
+}
+
+.home {
+  position: relative;
+  height: calc(100% - 5px);
   background: url("/img/background.jpg");
   background-attachment: fixed;
-  overflow-x: hidden;
+}
+
+.home .background {
+  background: url("/img/Achtergrond_elementen_logo.png") no-repeat;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  background-position: center center;
+  background-attachment: fixed;
 }
 
 .home .logo {
@@ -16,7 +38,7 @@ body {
   top: 30%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  width: 70%;
+  width: 40%;
   -webkit-animation: logo-in 1s;
           animation: logo-in 1s;
   -webkit-animation-timing-function: ease-in-out;
@@ -32,76 +54,82 @@ body {
           animation: logo-out 1s forwards;
 }
 
+@media only screen and (max-width: 1000px) {
+  .home .logo {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .home .logo {
+    width: 60%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .home .logo {
+    width: 70%;
+  }
+}
+
 .home .scroll {
   position: absolute;
   left: 50%;
   bottom: 40px;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
-  -webkit-animation: scroll-up-down 1s infinite;
-          animation: scroll-up-down 1s infinite;
 }
 
-.home .scroll img {
-  max-height: 50px;
-}
-
-.home .construction-img {
-  position: absolute;
-  left: 50%;
-  top: 70%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  width: 150px;
-  opacity: 0.7;
-  transition-duration: 0.5s;
-}
-
-.home .construction-img.hidden {
+.home .scroll .arrow {
+  position: relative;
+  background-image: url("/img/Pijltje.png");
+  background-size: 30px 14px;
+  width: 30px;
+  height: 14px;
+  margin-top: -2px;
+  -webkit-animation: in-out infinite 2s;
+          animation: in-out infinite 2s;
   opacity: 0;
 }
 
-.home .text {
-  position: absolute;
-  left: 50%;
-  top: calc(70% + 100px);
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  font-size: 18px;
-  font-weight: 300;
-  color: #fff;
-  text-align: center;
-  opacity: 0.9;
-  transition-duration: 0.5s;
+@-webkit-keyframes in-out {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+  }
+
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+  }
 }
 
-.home .text.hidden {
-  opacity: 0;
-  -webkit-transform: translate(-50%, -40%);
-          transform: translate(-50%, -40%);
-}
+@keyframes in-out {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+  }
 
-.home .circle {
-  position: absolute;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  bottom: -140px;
-  cursor: pointer;
-  width: 160px;
-  height: 160px;
-  border-radius: 160px;
-  border: 5px solid #fff;
-  background: #fdc80c;
-}
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
 
-.home .circle .square {
-  position: absolute;
-  bottom: -5px;
-  left: -5px;
-  right: -5px;
-  height: 135px;
-  background: #fdc80c;
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+  }
 }
 
 .home .contact {
@@ -224,30 +252,43 @@ body {
   }
 }
 
-.construction {
-  border-top: 5px solid #fff;
-  background: #fdc80c;
+.who-are-we {
+  position: relative;
+  border-top: 5px #fff solid;
+  border-bottom: 5px #fff solid;
+  background: url("/img/Geel_WebBackground.png");
+  background-attachment: fixed;
 }
 
-.construction .container {
-  max-width: 1000px;
-  padding: 100px 40px;
+.who-are-we .container {
+  position: relative;
+  max-width: 1200px;
   margin: auto;
-  text-align: center;
+  padding-top: 200px;
+  padding-bottom: 200px;
 }
 
-.construction .container .title {
-  text-align: center;
-  font-size: 40px;
-  color: #483906;
-  margin-bottom: 40px;
+.who-are-we .container .portraits {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
-.construction .container .text {
-  margin-top: 40px;
-  text-align: center;
-  font-size: 22px;
-  color: #483906;
+.who-are-we .container .portraits .portrait {
+  background: #252525;
+  width: 200px;
+  height: 200px;
+  border-radius: 200px;
+}
+
+.who-are-we .container .page-image {
+  position: absolute;
+  bottom: 0px;
+  left: 100px;
+  width: 304px;
+  height: 159px;
+  background-image: url("/img/Wie_wij_zijn.png");
 }
 
 .container {

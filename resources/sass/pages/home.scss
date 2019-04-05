@@ -1,10 +1,26 @@
 .home {
+    position: relative;
+    height: calc(100% - 5px);
+    background: url("/img/background.jpg");
+    background-attachment: fixed;
+
+    .background {
+        background: url("/img/Achtergrond_elementen_logo.png") no-repeat;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        position: absolute;
+        background-position: center center;
+        background-attachment: fixed;
+    }
+
     .logo {
         position: absolute;
         left: 50%;
         top: 30%;
         transform: translate(-50%, -50%);
-        width: 70%;
+        width: 40%;
 
         animation: logo-in 1s;
         animation-timing-function: ease-in-out;
@@ -16,71 +32,50 @@
         &.out {
             animation: logo-out 1s forwards;
         }
+
+        @media only screen and (max-width: 1000px) {
+            width: 50%;
+        }
+
+        @media only screen and (max-width: 800px) {
+            width: 60%;
+        }
+
+        @media only screen and (max-width: 600px) {
+            width: 70%;
+        }
     }
     .scroll {
         position: absolute;
         left: 50%;
         bottom: 40px;
         transform: translateX(-50%);
-        animation: scroll-up-down 1s infinite;
+        //animation: scroll-up-down 1s infinite;
 
-        img {
-            max-height: 50px;
-        }
-    }
-
-    .construction-img {
-        position: absolute;
-        left: 50%;
-        top: 70%;
-        transform: translate(-50%, -50%);
-        width: 150px;
-        opacity: 0.7;
-        transition-duration: 0.5s;
-
-        &.hidden {
+        .arrow {
+            position: relative;
+            background-image: url("/img/Pijltje.png");
+            background-size: 30px 14px;
+            width: 30px;
+            height: 14px;
+            margin-top: -2px;
+            animation: in-out infinite 2s;
             opacity: 0;
         }
-    }
 
-    .text {
-        position: absolute;
-        left: 50%;
-        top: calc(70% + 100px);
-        transform: translate(-50%, -50%);
-        font-size: 18px;
-        font-weight: 300;
-        color: #fff;
-        text-align: center;
-        opacity: 0.9;
-        transition-duration: 0.5s;
-
-        &.hidden {
-            opacity: 0;
-            transform: translate(-50%, -40%);
-        }
-    }
-
-    .circle {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        bottom: -140px;
-        cursor: pointer;
-
-        width: 160px;
-        height: 160px;
-        border-radius: 160px;
-        border: 5px solid #fff;
-        background: $yellow;
-
-        .square {
-            position: absolute;
-            bottom: -5px;
-            left: -5px;
-            right: -5px;
-            height: 135px;
-            background: $yellow;
+        @keyframes in-out {
+            0% {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(0.8);
+            }
         }
     }
 

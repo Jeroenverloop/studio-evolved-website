@@ -1,7 +1,7 @@
 <template>
     <div class="app">
         <page-home />
-        <!--<page-construction />-->
+        <page-whoarewe />
     </div>
 </template>
 

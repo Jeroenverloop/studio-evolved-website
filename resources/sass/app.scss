@@ -11,13 +11,18 @@ body {
     padding: 0px;
 
     font-family: $font;
-    background: url("/img/background.jpg");
+    background-color: $blue;
+    //background-size: 100%;
     background-attachment: fixed;
-    overflow-x: hidden;
+}
+
+.app {
+    position: relative;
+    height: 100%;
 }
 
 @import "./pages/home.scss";
-@import "./pages/construction.scss";
+@import "./pages/who-are-we.scss";
 
 .container {
     padding: 0px 40px;

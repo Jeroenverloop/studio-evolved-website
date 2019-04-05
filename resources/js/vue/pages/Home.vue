@@ -1,15 +1,15 @@
 <template>
-    <div class="home" style="height: 100vh">
+    <div class="home">
+        <div class="background" />
         <layout-logo :out="false" />
 
-        <img
-            src="/img/construction.png"
-            class="construction-img"
-            :class="{ hidden: stage < 7 }"
-        />
-        <div class="text" :class="{ hidden: stage < 7 }">
-            Onze website is momenteel in ontwikkeling en zal spoedig weer online
-            zijn!
+        <div class="scroll">
+            <div
+                v-for="(a, index) in arrows"
+                :key="index"
+                class="arrow"
+                :style="{ 'animation-delay': index * 0.2 + 's' }"
+            />
         </div>
 
         <div class="contact" :class="{ hidden: stage < 3 }">
@@ -43,7 +43,10 @@ import $ from "jquery";
 export default {
     data() {
         return {
-            stage: 0
+            stage: 0,
+            arrows: [0, 0, 0, 0],
+            currentArrow: 0,
+            interval: null
         };
     },
 
@@ -53,6 +56,13 @@ export default {
                 this.stage++;
             }, i * 250);
         }
+
+        this.interval = setInterval(() => {
+            this.currentArrow++;
+            if (this.currentArrow >= this.arrows.length) {
+                this.currentArrow = 0;
+            }
+        }, 100);
     }
 };
 </script>
