@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Barlow:100,200,300,400,500,600,700,800,900);@import url(https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700);@import url(https://fonts.googleapis.com/css?family=Poppins);html,
+@import url(https://fonts.googleapis.com/css?family=Barlow+Condensed:100,200,300,400,500,600,700,800,900);@import url(https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700);@import url(https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900);html,
 body {
   height: 100%;
   width: 100%;
@@ -78,6 +78,11 @@ body {
   bottom: 40px;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
+  transition-duration: 0.5s;
+}
+
+.home .scroll.hidden {
+  opacity: 0;
 }
 
 .home .scroll .arrow {
@@ -137,29 +142,42 @@ body {
   right: 30px;
   bottom: 30px;
   transition-duration: 0.5s;
+  display: flex;
 }
 
-.home .contact .item {
+.home .contact .dracula {
+  background: url("/img/dracula.svg") repeat-y;
+  background-size: 29px;
+  width: 29px;
+  background-position-y: 0px;
+}
+
+.home .contact .items .item {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 20px;
+  margin: 10px 10px;
   cursor: pointer;
   height: 40px;
   width: 40px;
+  transition-duration: 0.5s;
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 
-.home .contact .item:hover .icon img {
+.home .contact .items .item:hover .icon img {
   height: 40px;
 }
 
-.home .contact .item .icon img {
+.home .contact .items .item .icon img {
   transition-duration: 0.5s;
   height: 30px;
 }
 
-.home .contact.hidden {
-  right: -100px;
+.home .contact .items .item.hidden {
+  opacity: 0;
+  -webkit-transform: scale(0);
+          transform: scale(0);
 }
 
 @-webkit-keyframes logo-in {
@@ -264,31 +282,119 @@ body {
   position: relative;
   max-width: 1200px;
   margin: auto;
-  padding-top: 200px;
-  padding-bottom: 200px;
+  padding-top: 80px;
 }
 
-.who-are-we .container .portraits {
+@media only screen and (max-width: 900px) {
+  .who-are-we .container {
+    padding-bottom: 40px;
+  }
+}
+
+.who-are-we .container .employees {
   display: flex;
   justify-content: space-around;
   flex-direction: row;
   flex-wrap: wrap;
 }
 
-.who-are-we .container .portraits .portrait {
-  background: #252525;
-  width: 200px;
-  height: 200px;
-  border-radius: 200px;
+@media only screen and (max-width: 500px) {
+  .who-are-we .container .employees {
+    justify-content: center;
+  }
 }
 
-.who-are-we .container .page-image {
-  position: absolute;
-  bottom: 0px;
-  left: 100px;
-  width: 304px;
-  height: 159px;
-  background-image: url("/img/Wie_wij_zijn.png");
+.who-are-we .container .employees .employee {
+  width: 200px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.who-are-we .container .employees .employee .portrait {
+  background: #323639;
+  height: 200px;
+  width: 200px;
+  border-radius: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.who-are-we .container .employees .employee .portrait img {
+  width: 93%;
+  height: 93%;
+  border-radius: 100%;
+}
+
+.who-are-we .container .employees .employee .info {
+  margin-top: 40px;
+}
+
+.who-are-we .container .employees .employee .info .name {
+  color: #323639;
+  font-weight: 300;
+  font-size: 20px;
+  text-align: center;
+}
+
+.who-are-we .container .employees .employee .info .description {
+  color: #fff;
+  font-weight: 300;
+  font-size: 14px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.who-are-we .container .content {
+  margin-top: 80px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.who-are-we .container .content .page-image {
+  position: relative;
+  width: 50%;
+}
+
+.who-are-we .container .content .page-image img {
+  width: 100%;
+  position: relative;
+  bottom: -7px;
+}
+
+@media only screen and (max-width: 900px) {
+  .who-are-we .container .content .page-image {
+    display: none;
+  }
+}
+
+.who-are-we .container .content .text {
+  width: 50%;
+}
+
+@media only screen and (max-width: 900px) {
+  .who-are-we .container .content .text {
+    width: 100%;
+  }
+}
+
+.who-are-we .container .content .text .title {
+  font-size: 50px;
+  line-height: 52px;
+  color: #323639;
+}
+
+.who-are-we .container .content .text .title .bold {
+  font-weight: 800;
+}
+
+.who-are-we .container .content .text .paragraph {
+  margin-top: 10px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
 }
 
 .container {

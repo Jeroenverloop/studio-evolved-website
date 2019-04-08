@@ -167,11 +167,11 @@ __webpack_require__.r(__webpack_exports__);
       self.targetY = jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).scrollTop();
 
       if (!jquery__WEBPACK_IMPORTED_MODULE_0___default()(".logo").hasClass("out")) {
-        if (self.targetY > window.innerHeight * 0.75) {
+        if (self.targetY > window.innerHeight * 0.6) {
           jquery__WEBPACK_IMPORTED_MODULE_0___default()(".logo").addClass("out");
         }
       } else {
-        if (self.targetY < window.innerHeight * 0.75) {
+        if (self.targetY < window.innerHeight * 0.6) {
           jquery__WEBPACK_IMPORTED_MODULE_0___default()(".logo").removeClass("out");
         }
       }
@@ -246,6 +246,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -253,7 +256,9 @@ __webpack_require__.r(__webpack_exports__);
       stage: 0,
       arrows: [0, 0, 0, 0],
       currentArrow: 0,
-      interval: null
+      interval: null,
+      draculaCurrent: 0,
+      draculaTarget: 0
     };
   },
   mounted: function mounted() {
@@ -265,6 +270,16 @@ __webpack_require__.r(__webpack_exports__);
       }, i * 250);
     }
 
+    var self = this;
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).scroll(function () {
+      if (jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).scrollTop() > 50) {
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()(".scroll").addClass("hidden");
+      } else {
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()(".scroll").removeClass("hidden");
+      }
+
+      self.draculaTarget = jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).scrollTop() / 50;
+    });
     this.interval = setInterval(function () {
       _this.currentArrow++;
 
@@ -272,6 +287,10 @@ __webpack_require__.r(__webpack_exports__);
         _this.currentArrow = 0;
       }
     }, 100);
+    setInterval(function () {
+      _this.draculaCurrent += _this.draculaTarget - _this.draculaCurrent / 10;
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".dracula").css("background-position-y", _this.draculaCurrent);
+    }, 20);
   }
 });
 
@@ -288,6 +307,48 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -18241,7 +18302,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("img", {
     staticClass: "logo hidden",
-    attrs: { src: "img/Logo-white.png" }
+    attrs: { src: "img/Logo_wit_geel.svg" }
   })
 }
 var staticRenderFns = []
@@ -18287,12 +18348,22 @@ var render = function() {
         0
       ),
       _vm._v(" "),
-      _c("div", { staticClass: "contact", class: { hidden: _vm.stage < 3 } }, [
-        _vm._m(0),
+      _c("div", { staticClass: "contact" }, [
+        _c("div", { staticClass: "items" }, [
+          _c("div", { staticClass: "item", class: { hidden: _vm.stage < 3 } }, [
+            _vm._m(0)
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "item", class: { hidden: _vm.stage < 4 } }, [
+            _vm._m(1)
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "item", class: { hidden: _vm.stage < 5 } }, [
+            _vm._m(2)
+          ])
+        ]),
         _vm._v(" "),
-        _vm._m(1),
-        _vm._v(" "),
-        _vm._m(2)
+        _c("div", { staticClass: "dracula" })
       ])
     ],
     1
@@ -18303,45 +18374,36 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "item" }, [
-      _c(
-        "a",
-        {
-          staticClass: "icon",
-          attrs: { href: "mailto:info@studioevolved.nl" }
-        },
-        [_c("img", { attrs: { src: "/img/social/mail.png" } })]
-      )
+    return _c(
+      "a",
+      { staticClass: "icon", attrs: { href: "mailto:info@studioevolved.nl" } },
+      [_c("img", { attrs: { src: "/img/social/mail.png" } })]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("a", { staticClass: "icon", attrs: { href: "tel:0621554596" } }, [
+      _c("img", { attrs: { src: "/img/social/phone.png" } })
     ])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "item" }, [
-      _c("a", { staticClass: "icon", attrs: { href: "tel:0621554596" } }, [
-        _c("img", { attrs: { src: "/img/social/phone.png" } })
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "item" }, [
-      _c(
-        "a",
-        {
-          staticClass: "icon",
-          attrs: {
-            href:
-              "https://www.google.com/maps/place/Europalaan+100,+3526+KS+Utrecht/@52.0642471,5.1064218,17z/data=!3m1!4b1!4m5!3m4!1s0x47c665eb85078021:0x6ff23b3d038f6957!8m2!3d52.0642438!4d5.1086105",
-            target: "blank"
-          }
-        },
-        [_c("img", { attrs: { src: "/img/social/location.png" } })]
-      )
-    ])
+    return _c(
+      "a",
+      {
+        staticClass: "icon",
+        attrs: {
+          href:
+            "https://www.google.com/maps/place/Europalaan+100,+3526+KS+Utrecht/@52.0642471,5.1064218,17z/data=!3m1!4b1!4m5!3m4!1s0x47c665eb85078021:0x6ff23b3d038f6957!8m2!3d52.0642438!4d5.1086105",
+          target: "blank"
+        }
+      },
+      [_c("img", { attrs: { src: "/img/social/location.png" } })]
+    )
   }
 ]
 render._withStripped = true
@@ -18374,19 +18436,85 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "who-are-we" }, [
       _c("div", { staticClass: "container" }, [
-        _c("div", { staticClass: "portraits" }, [
-          _c("div", { staticClass: "portrait" }, [
-            _c("div", { staticClass: "image" })
+        _c("div", { staticClass: "employees" }, [
+          _c("div", { staticClass: "employee" }, [
+            _c("div", { staticClass: "portrait" }, [
+              _c("img", { attrs: { src: "/img/portrait/1.svg" } })
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "info" }, [
+              _c("div", { staticClass: "name" }, [_vm._v("Tommie Wildschut")]),
+              _vm._v(" "),
+              _c("div", { staticClass: "description" }, [
+                _vm._v("CEO | Lead grafisch")
+              ])
+            ])
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "portrait" }),
+          _c("div", { staticClass: "employee" }, [
+            _c("div", { staticClass: "portrait" }, [
+              _c("img", { attrs: { src: "/img/portrait/2.svg" } })
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "info" }, [
+              _c("div", { staticClass: "name" }, [_vm._v("Jeroen Verloop")]),
+              _vm._v(" "),
+              _c("div", { staticClass: "description" }, [
+                _vm._v("CTO | Lead developer")
+              ])
+            ])
+          ]),
           _vm._v(" "),
-          _c("div", { staticClass: "portrait" }),
+          _c("div", { staticClass: "employee" }, [
+            _c("div", { staticClass: "portrait" }, [
+              _c("img", { attrs: { src: "/img/portrait/3.svg" } })
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "info" }, [
+              _c("div", { staticClass: "name" }, [_vm._v("Wybe Grovestins")]),
+              _vm._v(" "),
+              _c("div", { staticClass: "description" }, [
+                _vm._v("COO | Project manager")
+              ])
+            ])
+          ]),
           _vm._v(" "),
-          _c("div", { staticClass: "portrait" })
+          _c("div", { staticClass: "employee" }, [
+            _c("div", { staticClass: "portrait" }, [
+              _c("img", { attrs: { src: "/img/portrait/4.svg" } })
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "info" }, [
+              _c("div", { staticClass: "name" }, [_vm._v("Jasper Lucijanic")]),
+              _vm._v(" "),
+              _c("div", { staticClass: "description" }, [
+                _vm._v("Grafisch vormgever")
+              ])
+            ])
+          ])
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "page-image" })
+        _c("div", { staticClass: "content" }, [
+          _c("div", { staticClass: "page-image" }, [
+            _c("img", { attrs: { src: "/img/Wie_wij_zijn.svg" } })
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "text" }, [
+            _c("div", { staticClass: "title" }, [
+              _c("span", [_vm._v("E")]),
+              _vm._v(" "),
+              _c("span", { staticClass: "bold" }, [_vm._v("LEARNING,")])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "paragraph" }, [
+              _c("span", [
+                _vm._v(
+                  "Wanneer je een mooie tekst op je pagina zet zal er veel veranderen in de vormgeving"
+                )
+              ])
+            ])
+          ])
+        ])
       ])
     ])
   }
@@ -27002,8 +27130,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-Object(_util_ComponentLoader__WEBPACK_IMPORTED_MODULE_3__["default"])(vue__WEBPACK_IMPORTED_MODULE_1___default.a); //Vue.use(VuePIXI);
-
+Object(_util_ComponentLoader__WEBPACK_IMPORTED_MODULE_3__["default"])(vue__WEBPACK_IMPORTED_MODULE_1___default.a);
 vue__WEBPACK_IMPORTED_MODULE_1___default.a.prototype.$ = jquery__WEBPACK_IMPORTED_MODULE_2___default.a;
 new vue__WEBPACK_IMPORTED_MODULE_1___default.a({
   el: "#app",
@@ -27377,8 +27504,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\Work\Laravel\StudioEvolved\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! D:\Work\Laravel\StudioEvolved\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! D:\Work\Homestead\Laravel\studio-evolved-website\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! D:\Work\Homestead\Laravel\studio-evolved-website\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

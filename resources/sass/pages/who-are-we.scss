@@ -9,31 +9,116 @@
         position: relative;
         max-width: 1200px;
         margin: auto;
-        padding-top: 200px;
-        padding-bottom: 200px;
-        //padding: 400px 0px;
+        padding-top: 80px;
 
-        .portraits {
+        @media only screen and (max-width: 900px) {
+            padding-bottom: 40px;
+        }
+
+        .employees{
             display: flex;
             justify-content: space-around;
             flex-direction: row;
             flex-wrap: wrap;
 
-            .portrait {
-                background: #252525;
+            @media only screen and (max-width: 500px) {
+                justify-content: center;
+            }
+
+            .employee{
                 width: 200px;
-                height: 200px;
-                border-radius: 200px;
+                
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+
+
+                .portrait {
+                    background: #323639;
+                    height: 200px;
+                    width: 200px;
+                    border-radius: 200px;
+
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    img{
+                        width: 93%;
+                        height: 93%;
+                        border-radius: 100%;
+                    }
+                }
+
+                .info{
+                    margin-top: 40px;
+
+                    .name{
+                        color: $dark;
+                        font-weight: 300;
+                        font-size: 20px;
+                        
+                        text-align: center;
+                    }
+
+                    .description{
+                        color: #fff;
+                        font-weight: 300;
+                        font-size: 14px;
+                        text-align: center;
+                        margin-top: 10px;
+                    }
+                }
             }
         }
 
-        .page-image {
-            position: absolute;
-            bottom: 0px;
-            left: 100px;
-            width: 304px;
-            height: 159px;
-            background-image: url("/img/Wie_wij_zijn.png");
+        .content{
+            margin-top: 80px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            //flex-wrap: wrap;
+
+            .page-image {
+                
+                position: relative;
+                width: 50%;
+
+                img{
+                    width: 100%;
+                    position: relative;
+                    bottom: -7px;
+                }
+
+                @media only screen and (max-width: 900px) {
+                    display: none;
+                }
+                
+            }
+
+            .text{
+                width: 50%;
+
+                @media only screen and (max-width: 900px) {
+                     width: 100%;
+                }
+
+                .title{
+                    font-size: 50px;
+                    line-height: 52px;
+                    color: $dark;
+                    .bold{
+                        font-weight: 800;
+                    }
+                }
+
+                .paragraph{
+                    margin-top: 10px;
+                    color: #fff;
+                    font-size: 18px;
+                    font-weight: 500;
+                }
+            }            
         }
     }
 }

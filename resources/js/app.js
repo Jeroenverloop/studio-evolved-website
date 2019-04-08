@@ -9,8 +9,6 @@ import "bootstrap/dist/js/bootstrap";
 
 ComponentLoader(Vue);
 
-//Vue.use(VuePIXI);
-
 Vue.prototype.$ = $;
 
 new Vue({

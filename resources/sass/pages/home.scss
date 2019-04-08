@@ -50,7 +50,11 @@
         left: 50%;
         bottom: 40px;
         transform: translateX(-50%);
-        //animation: scroll-up-down 1s infinite;
+        transition-duration: .5s;
+
+        &.hidden{
+            opacity: 0;
+        }
 
         .arrow {
             position: relative;
@@ -85,33 +89,51 @@
         bottom: 30px;
         transition-duration: 0.5s;
 
-        .item {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 20px;
-            cursor: pointer;
-            height: 40px;
-            width: 40px;
+        display: flex;
+        
 
-            &:hover {
-                .icon {
-                    img {
-                        height: 40px;
-                    }
-                }
-            }
-
-            .icon {
-                img {
-                    transition-duration: 0.5s;
-                    height: 30px;
-                }
-            }
+        .dracula{
+            background: url('/img/dracula.svg') repeat-y;
+            background-size: 29px;
+            width: 29px;
+            background-position-y: 0px;
         }
 
-        &.hidden {
-            right: -100px;
+        .items{
+
+            .item {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 10px 10px;
+                cursor: pointer;
+                height: 40px;
+                width: 40px;
+                transition-duration: .5s;
+                transform: scale(1);
+
+                &:hover {
+                    .icon {
+                        img {
+                            height: 40px;
+                        }
+                    }
+                }
+
+                .icon {
+                    img {
+                        transition-duration: 0.5s;
+                        height: 30px;
+                    }
+                }
+
+                &.hidden {
+                    opacity: 0;
+                    transform: scale(0);
+                }
+            }
+
+            
         }
     }
 
