@@ -383,8 +383,8 @@ body {
 @-webkit-keyframes info {
   0% {
     opacity: 0;
-    -webkit-transform: translateX(150px);
-            transform: translateX(150px);
+    -webkit-transform: translateX(-50px);
+            transform: translateX(-50px);
   }
 
   100% {
@@ -397,8 +397,8 @@ body {
 @keyframes info {
   0% {
     opacity: 0;
-    -webkit-transform: translateX(150px);
-            transform: translateX(150px);
+    -webkit-transform: translateX(-50px);
+            transform: translateX(-50px);
   }
 
   100% {
@@ -439,10 +439,17 @@ body {
   font-size: 50px;
   line-height: 52px;
   color: #323639;
+  transition-duration: 0.5s;
 }
 
 .who-are-we .container .content-mobile .title .bold {
   font-weight: 800;
+}
+
+.who-are-we .container .content-mobile .title.hidden {
+  opacity: 0;
+  -webkit-transform: translateX(150px);
+          transform: translateX(150px);
 }
 
 .who-are-we .container .content-mobile .paragraph {
@@ -455,6 +462,11 @@ body {
   padding-bottom: 30px;
   font-family: "Barlow Condensed";
   border-bottom: 2px dashed #323639;
+  transition-duration: 0.5s;
+}
+
+.who-are-we .container .content-mobile .paragraph.hidden {
+  opacity: 0;
 }
 
 .who-are-we .container .content {
@@ -535,8 +547,8 @@ body {
 
 .who-are-we .container .content .text .title.hidden {
   opacity: 0;
-  -webkit-transform: translateX(150px);
-          transform: translateX(150px);
+  -webkit-transform: translateX(0px) scale(0);
+          transform: translateX(0px) scale(0);
 }
 
 .who-are-we .container .content .text .paragraph {
@@ -572,22 +584,16 @@ body {
 
 .contact .container {
   position: relative;
-  max-width: 1200px;
+  max-width: 1000px;
   margin: auto;
-  padding-top: 80px;
+  padding-top: 40px;
   padding-bottom: 80px;
 }
 
 @media only screen and (max-width: 900px) {
   .contact .container {
-    padding: 80px 20px 40px 20px;
+    padding: 20px 40px 40px 40px;
   }
-}
-
-.contact .container .title {
-  font-size: 50px;
-  font-weight: 800;
-  color: #fff;
 }
 
 .contact .container .map {
@@ -595,6 +601,22 @@ body {
   margin-bottom: 40px;
   border-radius: 100%;
   border: 8px solid #49a8cc;
+  transition: 0.5s;
+}
+
+.contact .container .map.hidden {
+  opacity: 0;
+  -webkit-transform: translateY(250px);
+          transform: translateY(250px);
+}
+
+@media only screen and (max-width: 900px) {
+  .contact .container .map {
+    margin-top: 20px;
+    border-radius: 0px;
+    width: 100%;
+    border: 4px solid #49a8cc;
+  }
 }
 
 .contact .container .map #map {
@@ -603,11 +625,24 @@ body {
   border-radius: 100%;
 }
 
+@media only screen and (max-width: 900px) {
+  .contact .container .map #map {
+    border-radius: 0px;
+  }
+}
+
 .contact .container .content {
   margin-top: 40px;
   width: 100%;
   display: flex;
   justify-content: space-between;
+}
+
+@media only screen and (max-width: 900px) {
+  .contact .container .content {
+    flex-wrap: wrap;
+    margin-top: 0px;
+  }
 }
 
 .contact .container .content .company-data {
@@ -625,6 +660,27 @@ body {
   }
 }
 
+.contact .container .content .company-data .title {
+  font-size: 50px;
+  font-weight: 800;
+  color: #fff;
+  width: 100%;
+  transition-duration: 0.5s;
+}
+
+@media only screen and (max-width: 900px) {
+  .contact .container .content .company-data .title {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+}
+
+.contact .container .content .company-data .title.hidden {
+  opacity: 0;
+  -webkit-transform: translateX(-100px);
+          transform: translateX(-100px);
+}
+
 .contact .container .content .company-data .item {
   width: 100%;
   display: flex;
@@ -632,6 +688,12 @@ body {
   align-items: center;
   margin: 10px 0px;
   transition-duration: 0.5s;
+}
+
+.contact .container .content .company-data .item.hidden {
+  opacity: 0;
+  -webkit-transform: translateX(-100px);
+          transform: translateX(-100px);
 }
 
 .contact .container .content .company-data .item:hover .icon {
@@ -646,7 +708,7 @@ body {
   height: 30px;
   width: 30px;
   margin-right: 20px;
-  transition-duration: 0.5s;
+  transition-duration: 0.2s;
 }
 
 .contact .container .content .company-data .item .icon img {

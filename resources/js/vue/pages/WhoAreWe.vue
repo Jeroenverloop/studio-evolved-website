@@ -2,11 +2,11 @@
 	<div class="who-are-we">
 		<div class="container">
 			<div class="content-mobile">
-				<div class="title">
+				<div class="title anim-in hidden">
 					<span>WIE WIJ</span>
 					<span class="bold">ZIJN</span>
 				</div>
-				<div class="paragraph">
+				<div class="paragraph anim-in hidden">
 					<span v-html="info"></span>
 				</div>
 			</div>
@@ -75,7 +75,7 @@
 		data() {
 			return {
 				info:
-					"Wanneer je een mooie tekst op je pagina zet zal er veel veranderen in de vormgeving. Wanneer je een mooie tekst op je pagina zet zal er veel veranderen in de vormgeving. Wanneer je een mooie tekst op je pagina zet zal er veel veranderen in de vormgeving. Wanneer je een mooie tekst op je pagina zet zal er veel veranderen in de vormgeving."
+					"Samen met onze klanten ontwikkelen wij leeroplossingen in het bedrijfsleven. Door gamification en 'adaptive learning' te integreren maken wij het leren van Compliance, AVG en bedrijfsinformatie kinderspel."
 			};
 		}
 	};

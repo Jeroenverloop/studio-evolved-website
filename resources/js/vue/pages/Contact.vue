@@ -7,10 +7,10 @@
 			:style="{opacity: .5 - (0.5/test.length)*index}"
 		/>
 		<div class="container">
-			<div class="title">CONTACT</div>
 			<div class="content">
 				<div class="company-data">
-					<div class="item">
+					<div class="title anim-in hidden">CONTACT</div>
+					<div class="item anim-in hidden">
 						<div class="icon">
 							<img src="/img/contact/phone.svg">
 						</div>
@@ -18,7 +18,7 @@
 							<a href="tel:+31618213589">+31 6 215 545 96</a>
 						</div>
 					</div>
-					<div class="item">
+					<div class="item anim-in hidden">
 						<div class="icon">
 							<img src="/img/contact/website.svg">
 						</div>
@@ -26,7 +26,7 @@
 							<a href="https://www.studioevolved.nl">www.studioevolved.nl</a>
 						</div>
 					</div>
-					<div class="item">
+					<div class="item anim-in hidden">
 						<div class="icon">
 							<img src="/img/contact/location.svg">
 						</div>
@@ -36,7 +36,7 @@
 							>Europalaan 100, 3526 KS Utrecht</a>
 						</div>
 					</div>
-					<div class="item">
+					<div class="item anim-in hidden">
 						<div class="icon">
 							<img src="/img/contact/mail.svg">
 						</div>
@@ -45,7 +45,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="map">
+				<div class="map anim-in hidden">
 					<div id="map"/>
 				</div>
 			</div>
@@ -92,7 +92,9 @@
 		methods: {
 			resizeMap: function() {
 				let width = $(".map").width();
-				$(".map").css("height", width);
+				if ($(window).width() < 900) {
+					$(".map").css("height", 300);
+				} else $(".map").css("height", width);
 			}
 		}
 	};

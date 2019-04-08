@@ -302,7 +302,10 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     resizeMap: function resizeMap() {
       var width = jquery__WEBPACK_IMPORTED_MODULE_0___default()(".map").width();
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".map").css("height", width);
+
+      if (jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).width() < 900) {
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()(".map").css("height", 300);
+      } else jquery__WEBPACK_IMPORTED_MODULE_0___default()(".map").css("height", width);
     }
   }
 });
@@ -501,7 +504,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      info: "Wanneer je een mooie tekst op je pagina zet zal er veel veranderen in de vormgeving. Wanneer je een mooie tekst op je pagina zet zal er veel veranderen in de vormgeving. Wanneer je een mooie tekst op je pagina zet zal er veel veranderen in de vormgeving. Wanneer je een mooie tekst op je pagina zet zal er veel veranderen in de vormgeving."
+      info: "Samen met onze klanten ontwikkelen wij leeroplossingen in het bedrijfsleven. Door gamification en 'adaptive learning' te integreren maken wij het leren van Compliance, AVG en bedrijfsinformatie kinderspel."
     };
   }
 });
@@ -18492,11 +18495,13 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "title" }, [_vm._v("CONTACT")]),
-      _vm._v(" "),
       _c("div", { staticClass: "content" }, [
         _c("div", { staticClass: "company-data" }, [
-          _c("div", { staticClass: "item" }, [
+          _c("div", { staticClass: "title anim-in hidden" }, [
+            _vm._v("CONTACT")
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "item anim-in hidden" }, [
             _c("div", { staticClass: "icon" }, [
               _c("img", { attrs: { src: "/img/contact/phone.svg" } })
             ]),
@@ -18508,7 +18513,7 @@ var staticRenderFns = [
             ])
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "item" }, [
+          _c("div", { staticClass: "item anim-in hidden" }, [
             _c("div", { staticClass: "icon" }, [
               _c("img", { attrs: { src: "/img/contact/website.svg" } })
             ]),
@@ -18520,7 +18525,7 @@ var staticRenderFns = [
             ])
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "item" }, [
+          _c("div", { staticClass: "item anim-in hidden" }, [
             _c("div", { staticClass: "icon" }, [
               _c("img", { attrs: { src: "/img/contact/location.svg" } })
             ]),
@@ -18539,7 +18544,7 @@ var staticRenderFns = [
             ])
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "item" }, [
+          _c("div", { staticClass: "item anim-in hidden" }, [
             _c("div", { staticClass: "icon" }, [
               _c("img", { attrs: { src: "/img/contact/mail.svg" } })
             ]),
@@ -18552,7 +18557,9 @@ var staticRenderFns = [
           ])
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "map" }, [_c("div", { attrs: { id: "map" } })])
+        _c("div", { staticClass: "map anim-in hidden" }, [
+          _c("div", { attrs: { id: "map" } })
+        ])
       ])
     ])
   }
@@ -18683,7 +18690,7 @@ var render = function() {
       _c("div", { staticClass: "content-mobile" }, [
         _vm._m(0),
         _vm._v(" "),
-        _c("div", { staticClass: "paragraph" }, [
+        _c("div", { staticClass: "paragraph anim-in hidden" }, [
           _c("span", { domProps: { innerHTML: _vm._s(_vm.info) } })
         ])
       ]),
@@ -18709,7 +18716,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "title" }, [
+    return _c("div", { staticClass: "title anim-in hidden" }, [
       _c("span", [_vm._v("WIE WIJ")]),
       _vm._v(" "),
       _c("span", { staticClass: "bold" }, [_vm._v("ZIJN")])
