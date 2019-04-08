@@ -51,6 +51,7 @@
         bottom: 40px;
         transform: translateX(-50%);
         transition-duration: .5s;
+        cursor: pointer;
 
         &.hidden{
             opacity: 0;

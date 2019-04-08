@@ -79,6 +79,7 @@ body {
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
   transition-duration: 0.5s;
+  cursor: pointer;
 }
 
 .home .scroll.hidden {
@@ -309,6 +310,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin-bottom: 20px;
 }
 
 .who-are-we .container .employees .employee .portrait {

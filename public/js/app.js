@@ -261,6 +261,13 @@ __webpack_require__.r(__webpack_exports__);
       draculaTarget: 0
     };
   },
+  methods: {
+    scrollPage: function scrollPage() {
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()("html, body").animate({
+        scrollTop: jquery__WEBPACK_IMPORTED_MODULE_0___default()(".who-are-we").offset().top
+      }, 500);
+    }
+  },
   mounted: function mounted() {
     var _this = this;
 
@@ -18337,7 +18344,7 @@ var render = function() {
       _vm._v(" "),
       _c(
         "div",
-        { staticClass: "scroll" },
+        { staticClass: "scroll", on: { click: _vm.scrollPage } },
         _vm._l(_vm.arrows, function(a, index) {
           return _c("div", {
             key: index,

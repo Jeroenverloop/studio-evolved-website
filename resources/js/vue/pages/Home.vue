@@ -3,7 +3,7 @@
 		<div class="background"/>
 		<layout-logo :out="false"/>
 
-		<div class="scroll">
+		<div class="scroll" @click="scrollPage">
 			<div
 				v-for="(a, index) in arrows"
 				:key="index"
@@ -53,6 +53,15 @@
 				draculaCurrent: 0,
 				draculaTarget: 0
 			};
+		},
+
+		methods: {
+			scrollPage: function() {
+				$("html, body").animate(
+					{ scrollTop: $(".who-are-we").offset().top },
+					500
+				);
+			}
 		},
 
 		mounted() {
