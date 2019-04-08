@@ -12,7 +12,7 @@
 			/>
 		</div>
 
-		<div class="contact">
+		<div class="contact-component">
 			<div class="items">
 				<div class="item" :class="{ hidden: stage < 3 }">
 					<a href="mailto:info@studioevolved.nl" class="icon">
@@ -47,7 +47,7 @@
 		data() {
 			return {
 				stage: 0,
-				arrows: [0, 0, 0, 0],
+				arrows: [0, 0, 0],
 				currentArrow: 0,
 				interval: null,
 				draculaCurrent: 0,

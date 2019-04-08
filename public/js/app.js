@@ -104,6 +104,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
@@ -111,6 +112,16 @@ __webpack_require__.r(__webpack_exports__);
       var max = 100;
       var scroll = Math.min(max, jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).scrollTop() / 20);
       jquery__WEBPACK_IMPORTED_MODULE_0___default()("body").css("background-position-y", -scroll);
+      var scrollTop = jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).scrollTop();
+      var windowHeight = jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).height();
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".anim-in").each(function () {
+        var elTop = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).offset().top;
+
+        if (elTop + 150 <= scrollTop + windowHeight) {
+          jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).removeClass("anim-in");
+          jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).removeClass("hidden");
+        }
+      });
     });
   }
 });
@@ -196,6 +207,108 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/vue/pages/Contact.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/vue/pages/Contact.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      test: [0, 0, 0, 0],
+      info: "Wanneer je een mooie tekst op je pagina zet zal er veel veranderen in de vormgeving"
+    };
+  },
+  mounted: function mounted() {
+    this.resizeMap();
+    var lat = 52.0643;
+    var long = 5.10858;
+    var map = L.map("map").setView([lat, long], 18);
+    L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
+      attribution: "",
+      maxZoom: 18,
+      id: "mapbox.streets",
+      accessToken: "pk.eyJ1IjoiamVyb2VudmVybG9vcCIsImEiOiJjanRoMTh5cjIwdDl4NGFycmNqb2theGk3In0.lT_uRMGshrIKCugYll9idw"
+    }).addTo(map);
+    L.marker([lat, long]).addTo(map);
+    var self = this;
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).resize(function () {
+      self.resizeMap();
+    });
+  },
+  methods: {
+    resizeMap: function resizeMap() {
+      var width = jquery__WEBPACK_IMPORTED_MODULE_0___default()(".map").width();
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".map").css("height", width);
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/vue/pages/Home.vue?vue&type=script&lang=js&":
 /*!**************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/vue/pages/Home.vue?vue&type=script&lang=js& ***!
@@ -254,7 +367,7 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       stage: 0,
-      arrows: [0, 0, 0, 0],
+      arrows: [0, 0, 0],
       currentArrow: 0,
       interval: null,
       draculaCurrent: 0,
@@ -374,8 +487,24 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
-/* harmony default export */ __webpack_exports__["default"] = ({});
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      info: "Wanneer je een mooie tekst op je pagina zet zal er veel veranderen in de vormgeving. Wanneer je een mooie tekst op je pagina zet zal er veel veranderen in de vormgeving. Wanneer je een mooie tekst op je pagina zet zal er veel veranderen in de vormgeving. Wanneer je een mooie tekst op je pagina zet zal er veel veranderen in de vormgeving."
+    };
+  }
+});
 
 /***/ }),
 
@@ -18281,7 +18410,13 @@ var render = function() {
   return _c(
     "div",
     { staticClass: "app" },
-    [_c("page-home"), _vm._v(" "), _c("page-whoarewe")],
+    [
+      _c("page-home"),
+      _vm._v(" "),
+      _c("page-whoarewe"),
+      _vm._v(" "),
+      _c("page-contact")
+    ],
     1
   )
 }
@@ -18313,6 +18448,115 @@ var render = function() {
   })
 }
 var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/vue/pages/Contact.vue?vue&type=template&id=80683144&":
+/*!*********************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/vue/pages/Contact.vue?vue&type=template&id=80683144& ***!
+  \*********************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "contact" },
+    [
+      _vm._l(_vm.test, function(a, index) {
+        return _c("div", {
+          key: index,
+          staticClass: "transition",
+          style: { opacity: 0.5 - (0.5 / _vm.test.length) * index }
+        })
+      }),
+      _vm._v(" "),
+      _vm._m(0)
+    ],
+    2
+  )
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "container" }, [
+      _c("div", { staticClass: "title" }, [_vm._v("CONTACT")]),
+      _vm._v(" "),
+      _c("div", { staticClass: "content" }, [
+        _c("div", { staticClass: "company-data" }, [
+          _c("div", { staticClass: "item" }, [
+            _c("div", { staticClass: "icon" }, [
+              _c("img", { attrs: { src: "/img/contact/phone.svg" } })
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "data" }, [
+              _c("a", { attrs: { href: "tel:+31618213589" } }, [
+                _vm._v("+31 6 215 545 96")
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "item" }, [
+            _c("div", { staticClass: "icon" }, [
+              _c("img", { attrs: { src: "/img/contact/website.svg" } })
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "data" }, [
+              _c("a", { attrs: { href: "https://www.studioevolved.nl" } }, [
+                _vm._v("www.studioevolved.nl")
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "item" }, [
+            _c("div", { staticClass: "icon" }, [
+              _c("img", { attrs: { src: "/img/contact/location.svg" } })
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "data" }, [
+              _c(
+                "a",
+                {
+                  attrs: {
+                    href:
+                      "https://www.google.com/maps/place/Europalaan+100,+3526+KS+Utrecht/@52.0642438,5.1064218,17z/data=!3m1!4b1!4m5!3m4!1s0x47c665eb85078021:0x6ff23b3d038f6957!8m2!3d52.0642438!4d5.1086105"
+                  }
+                },
+                [_vm._v("Europalaan 100, 3526 KS Utrecht")]
+              )
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "item" }, [
+            _c("div", { staticClass: "icon" }, [
+              _c("img", { attrs: { src: "/img/contact/mail.svg" } })
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "data" }, [
+              _c("a", { attrs: { href: "mailto:info@studioevolved.nl" } }, [
+                _vm._v("info@studioevolved.nl")
+              ])
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "map" }, [_c("div", { attrs: { id: "map" } })])
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -18355,7 +18599,7 @@ var render = function() {
         0
       ),
       _vm._v(" "),
-      _c("div", { staticClass: "contact" }, [
+      _c("div", { staticClass: "contact-component" }, [
         _c("div", { staticClass: "items" }, [
           _c("div", { staticClass: "item", class: { hidden: _vm.stage < 3 } }, [
             _vm._m(0)
@@ -18434,95 +18678,169 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "who-are-we" }, [
+    _c("div", { staticClass: "container" }, [
+      _c("div", { staticClass: "content-mobile" }, [
+        _vm._m(0),
+        _vm._v(" "),
+        _c("div", { staticClass: "paragraph" }, [
+          _c("span", { domProps: { innerHTML: _vm._s(_vm.info) } })
+        ])
+      ]),
+      _vm._v(" "),
+      _vm._m(1),
+      _vm._v(" "),
+      _c("div", { staticClass: "content" }, [
+        _vm._m(2),
+        _vm._v(" "),
+        _c("div", { staticClass: "text" }, [
+          _vm._m(3),
+          _vm._v(" "),
+          _c("div", { staticClass: "paragraph anim-in hidden" }, [
+            _c("span", { domProps: { innerHTML: _vm._s(_vm.info) } })
+          ])
+        ])
+      ])
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "who-are-we" }, [
-      _c("div", { staticClass: "container" }, [
-        _c("div", { staticClass: "employees" }, [
-          _c("div", { staticClass: "employee" }, [
-            _c("div", { staticClass: "portrait" }, [
-              _c("img", { attrs: { src: "/img/portrait/1.svg" } })
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "info" }, [
-              _c("div", { staticClass: "name" }, [_vm._v("Tommie Wildschut")]),
-              _vm._v(" "),
-              _c("div", { staticClass: "description" }, [
-                _vm._v("CEO | Lead grafisch")
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "employee" }, [
-            _c("div", { staticClass: "portrait" }, [
-              _c("img", { attrs: { src: "/img/portrait/2.svg" } })
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "info" }, [
-              _c("div", { staticClass: "name" }, [_vm._v("Jeroen Verloop")]),
-              _vm._v(" "),
-              _c("div", { staticClass: "description" }, [
-                _vm._v("CTO | Lead developer")
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "employee" }, [
-            _c("div", { staticClass: "portrait" }, [
-              _c("img", { attrs: { src: "/img/portrait/3.svg" } })
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "info" }, [
-              _c("div", { staticClass: "name" }, [_vm._v("Wybe Grovestins")]),
-              _vm._v(" "),
-              _c("div", { staticClass: "description" }, [
-                _vm._v("COO | Project manager")
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "employee" }, [
-            _c("div", { staticClass: "portrait" }, [
-              _c("img", { attrs: { src: "/img/portrait/4.svg" } })
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "info" }, [
-              _c("div", { staticClass: "name" }, [_vm._v("Jasper Lucijanic")]),
-              _vm._v(" "),
-              _c("div", { staticClass: "description" }, [
-                _vm._v("Grafisch vormgever")
-              ])
-            ])
-          ])
-        ]),
+    return _c("div", { staticClass: "title" }, [
+      _c("span", [_vm._v("WIE WIJ")]),
+      _vm._v(" "),
+      _c("span", { staticClass: "bold" }, [_vm._v("ZIJN")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "employees" }, [
+      _c("div", { staticClass: "employee" }, [
+        _c(
+          "div",
+          {
+            staticClass: "portrait anim-in hidden",
+            staticStyle: { "animation-delay": ".1s" }
+          },
+          [_c("img", { attrs: { src: "/img/portrait/1.svg" } })]
+        ),
         _vm._v(" "),
-        _c("div", { staticClass: "content" }, [
-          _c("div", { staticClass: "page-image" }, [
-            _c("img", { attrs: { src: "/img/Wie_wij_zijn.svg" } })
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "text" }, [
-            _c("div", { staticClass: "title" }, [
-              _c("span", [_vm._v("E")]),
-              _vm._v(" "),
-              _c("span", { staticClass: "bold" }, [_vm._v("LEARNING,")])
-            ]),
+        _c(
+          "div",
+          {
+            staticClass: "info anim-in hidden",
+            staticStyle: { "animation-delay": ".1s" }
+          },
+          [
+            _c("div", { staticClass: "name" }, [_vm._v("Tommie Wildschut")]),
             _vm._v(" "),
-            _c("div", { staticClass: "paragraph" }, [
-              _c("span", [
-                _vm._v(
-                  "Wanneer je een mooie tekst op je pagina zet zal er veel veranderen in de vormgeving"
-                )
-              ])
+            _c("div", { staticClass: "description" }, [
+              _vm._v("CEO | Lead grafisch")
             ])
-          ])
-        ])
+          ]
+        )
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "employee" }, [
+        _c(
+          "div",
+          {
+            staticClass: "portrait anim-in hidden",
+            staticStyle: { "animation-delay": ".2s" }
+          },
+          [_c("img", { attrs: { src: "/img/portrait/2.svg" } })]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass: "info anim-in hidden",
+            staticStyle: { "animation-delay": ".2s" }
+          },
+          [
+            _c("div", { staticClass: "name" }, [_vm._v("Jeroen Verloop")]),
+            _vm._v(" "),
+            _c("div", { staticClass: "description" }, [
+              _vm._v("CTO | Lead developer")
+            ])
+          ]
+        )
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "employee" }, [
+        _c(
+          "div",
+          {
+            staticClass: "portrait anim-in hidden",
+            staticStyle: { "animation-delay": ".3s" }
+          },
+          [_c("img", { attrs: { src: "/img/portrait/3.svg" } })]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass: "info anim-in hidden",
+            staticStyle: { "animation-delay": ".3s" }
+          },
+          [
+            _c("div", { staticClass: "name" }, [_vm._v("Wybe Grovestins")]),
+            _vm._v(" "),
+            _c("div", { staticClass: "description" }, [
+              _vm._v("COO | Project manager")
+            ])
+          ]
+        )
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "employee" }, [
+        _c(
+          "div",
+          {
+            staticClass: "portrait anim-in hidden",
+            staticStyle: { "animation-delay": ".4s" }
+          },
+          [_c("img", { attrs: { src: "/img/portrait/4.svg" } })]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass: "info anim-in hidden",
+            staticStyle: { "animation-delay": ".4s" }
+          },
+          [
+            _c("div", { staticClass: "name" }, [_vm._v("Jasper Lucijanic")]),
+            _vm._v(" "),
+            _c("div", { staticClass: "description" }, [
+              _vm._v("Grafisch vormgever")
+            ])
+          ]
+        )
       ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "page-image anim-in hidden" }, [
+      _c("img", { attrs: { src: "/img/Wie_wij_zijn.svg" } })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "title anim-in hidden" }, [
+      _c("span", [_vm._v("LEER")]),
+      _vm._v(" "),
+      _c("span", { staticClass: "bold" }, [_vm._v("OPLOSSINGEN")])
     ])
   }
 ]
@@ -27335,6 +27653,75 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/vue/pages/Contact.vue":
+/*!********************************************!*\
+  !*** ./resources/js/vue/pages/Contact.vue ***!
+  \********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Contact_vue_vue_type_template_id_80683144___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Contact.vue?vue&type=template&id=80683144& */ "./resources/js/vue/pages/Contact.vue?vue&type=template&id=80683144&");
+/* harmony import */ var _Contact_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Contact.vue?vue&type=script&lang=js& */ "./resources/js/vue/pages/Contact.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _Contact_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Contact_vue_vue_type_template_id_80683144___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _Contact_vue_vue_type_template_id_80683144___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/vue/pages/Contact.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/vue/pages/Contact.vue?vue&type=script&lang=js&":
+/*!*********************************************************************!*\
+  !*** ./resources/js/vue/pages/Contact.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Contact_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./Contact.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/vue/pages/Contact.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Contact_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/vue/pages/Contact.vue?vue&type=template&id=80683144&":
+/*!***************************************************************************!*\
+  !*** ./resources/js/vue/pages/Contact.vue?vue&type=template&id=80683144& ***!
+  \***************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Contact_vue_vue_type_template_id_80683144___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./Contact.vue?vue&type=template&id=80683144& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/vue/pages/Contact.vue?vue&type=template&id=80683144&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Contact_vue_vue_type_template_id_80683144___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Contact_vue_vue_type_template_id_80683144___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/vue/pages/Home.vue":
 /*!*****************************************!*\
   !*** ./resources/js/vue/pages/Home.vue ***!
@@ -27484,11 +27871,14 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Home__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Home */ "./resources/js/vue/pages/Home.vue");
 /* harmony import */ var _WhoAreWe__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./WhoAreWe */ "./resources/js/vue/pages/WhoAreWe.vue");
+/* harmony import */ var _Contact__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Contact */ "./resources/js/vue/pages/Contact.vue");
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   Home: _Home__WEBPACK_IMPORTED_MODULE_0__["default"],
-  WhoAreWe: _WhoAreWe__WEBPACK_IMPORTED_MODULE_1__["default"]
+  WhoAreWe: _WhoAreWe__WEBPACK_IMPORTED_MODULE_1__["default"],
+  Contact: _Contact__WEBPACK_IMPORTED_MODULE_2__["default"]
 });
 
 /***/ }),
